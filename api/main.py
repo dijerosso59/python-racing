@@ -14,3 +14,4 @@ def predict(request: Request):
     return 2.3
 
 # uvicorn main:app --reload --port 7999 
+# python3 -m uvicorn main:app --reload --port 7999 

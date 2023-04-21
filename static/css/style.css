@@ -74,9 +74,15 @@ a {
   background: url("../img/background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   display: flex;
+  max-height: 100vh;
+}
+
+#top .py {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 #top .flex {
@@ -139,8 +145,9 @@ a {
 }
 
 #top .link .btn {
-  font-size: 72px;
+  font-size: 50px;
   padding: 20px 60px;
+  margin-top: -1rem;
 }
 
 #form .py {
@@ -240,5 +247,7 @@ html {
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+    padding-right: 150px;
+    padding-left: 150px;
   }
 }
