@@ -12,3 +12,5 @@ class Request(BaseModel):
 @app.post("/predict")
 def predict(request: Request):
     return 2.3
+
+# uvicorn main:app --reload --port 7999 
