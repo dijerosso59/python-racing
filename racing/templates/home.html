@@ -7,11 +7,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
     <title>Racing</title>
   </head>
+
   <body>
-    <div class="center">
-      <h1>fichier home.html</h1>
-    </div>
+    <section id="top">
+      <div class="background">
+        <div class="container m-auto relative">
+          <div>
+            <h1>Bienvenue sur Diroshow Racing !</h1>
+          </div>
+          <div class="flex">
+            <div class="map">
+              <img
+                src="{% static 'img/map.png' %}"
+                alt="Description de l'image"
+              />
+            </div>
+            <div class="description">
+              <ul class="grid">
+                <li>
+                  <p>Date</p>
+                  <span>2023</span>
+                </li>
+                <li>
+                  <p>Nombre de tours</p>
+                  <span>12</span>
+                </li>
+                <li>
+                  <p>Longueur du circuit</p>
+                  <span>5.865</span>
+                </li>
+                <li>
+                  <p>Distance de course</p>
+                  <span>310.845</span>
+                </li>
+                <li>
+                  <p>Meilleur de temps</p>
+                  <span>3.35</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cars">
+            <img
+              src="{% static 'img/cars-2.png' %}"
+              alt="Description de l'image"
+            />
+          </div>
+          <div class="brand">
+            <h2>JETT</h2>
+          </div>
+          <div class="link">
+            <a href="#form" class="btn">Start </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="flex items-center h-screen">
+        <div class="custom-form">
+          <div>
+            <h3>Choisis ton pilote !</h3>
+          </div>
+          <form method="post" action="">
+            <div class="element">
+              <label for="">Nom du Pilote</label>
+              <input type="text" />
+            </div>
+            <div class="element">
+              <label for="">Circuit</label>
+              <input type="text" />
+            </div>
+            <div class="element">
+              <label for="">Constructeur</label>
+              <input type="text" />
+            </div>
+            <div class="element">
+              <label for="">Position de départ</label>
+              <input type="text" />
+            </div>
+            <div class="text-center">
+              <button class="btn" type="submit">Envoyer</button>
+            </div>
+          </form>
+        </div>
+        <div class="w-50 h-full">
+          <img style="width: 100%; height: 100%"
+              src="{% static 'img/formule.webp' %}"
+              alt="Description de l'image"
+            />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
