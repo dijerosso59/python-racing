@@ -28,11 +28,7 @@ https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020
 
 La partie front-end est réalisé avec le framework Django. Voici l'architecture du projet avec les explications :
 
-api : l'
-jupyter : dossier du notebook
-racing: dossier principal de l'application avec tous les paramètres. La vue principal se trouve dans le dossier template : home.html
-static: l'ensemble des assets du projet comme les images ou les fichier css
-
-
-
-
+* api : l'ensemble des fichiers pour l'api
+* jupyter : dossier du notebook
+* racing: dossier principal de l'application avec tous les paramètres. La vue principal se trouve dans le dossier template : home.html
+* static: l'ensemble des assets du projet comme les images ou les fichier css
