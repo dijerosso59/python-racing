@@ -162,7 +162,7 @@ a {
   font-size: 20px;
 }
 
-#form input {
+#form input, #form select {
   border-radius: 5px;
   padding: 0.5rem;
   border: 1px solid black;
@@ -193,7 +193,13 @@ h3 {
   font-size: 50px !important;
   font-family: "Acme", sans-serif;
   text-transform: uppercase;
-  margin-bottom: 4rem !important;
+  margin-bottom: 2rem !important;
+}
+
+h4 {
+  font-size: 30px !important;
+  font-family: "Acme", sans-serif;
+  text-transform: uppercase;
 }
 
 html {

@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from .mock import data
 
 def home(request):
-    return render(request, 'home.html')
+    context = {
+        'data': data,
+    }
+    return render(request, 'home.html', context)
