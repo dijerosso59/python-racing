@@ -15,7 +15,7 @@ python manage.py runserver
 # Screenshots
 
 ![Screenshot](static/img/vue1.png)
-![Screenshot](static/img/vue2.png)
+![Screenshot](static/img/newvue2.png)
 
 L’objectif de notre application est de donner la position d’un pilote de racing en fonction des informations que l’utilisateur a saisie à l’aide d’une intelligence artificielle.
 
