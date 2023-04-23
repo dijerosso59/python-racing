@@ -1,17 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Adamina&family=Titillium+Web&display=swap");
+
 body {
-    background-color: black;
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Titillium Web", sans-serif;
+}
+
+a {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  padding-right: 32px;
+  padding-left: 32px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.btn {
+  background-color: #e4f611;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid black;
+  width: fit-content;
+  transition-duration: 0.5s;
+}
+
+.btn:hover {
+  background: black;
+  border-color: #e4f611;
+  color: #e4f611;
+}
+
+#top .background {
+  background: url("../img/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  max-height: 100vh;
+}
+
+#top .py {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#top .flex {
+  gap: 50px;
+}
+
+#top .map {
+  width: 30rem;
+}
+
+#top .racer {
+  font-size: 24px !important;
+  font-family: "Acme", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1rem !important;
+}
+
+#top .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 500px;
+}
+
+#top .grid li {
+  border-radius: 5px;
+  border-bottom: 1px solid #d0d0d2;
+  border-right: 1px solid #d0d0d2;
+}
+
+#top .grid li:last-child {
+  grid-column: span 2 / span 2;
+}
+
+#top .grid p {
+  font-size: 13px;
+}
+
+#top .grid span {
+  font-family: "Adamina", serif;
+  font-size: 36px;
+  margin-top: 12px;
+}
+
+#top .brand {
+  position: absolute;
+  top: 6rem;
+  right: -12rem;
+  rotate: 90deg;
+}
+
+#top .cars {
+  margin-top: -1rem;
+  z-index: 10;
+  position: relative;
+}
+
+#top .cars img {
+  margin-left: auto;
+}
+
+#top .link .btn {
+  font-size: 50px;
+  padding: 20px 60px;
+  margin-top: -1rem;
+}
+
+#form .py {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.custom-form {
+  width: 50%;
+  padding: 2rem 6rem;
+}
+
+#form form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#form .element {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+#form input, #form select {
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+#form .btn {
+  font-size: 30px;
+  padding: 10px 30px;
+  margin-top: 2rem;
 }
 
 h1 {
-    color: white;
-    font-weight: bold;
-    font-size: 50px;
+  font-size: 50px !important;
+  font-weight: bold !important;
+  margin-bottom: 2rem !important;
+  font-family: "Acme", sans-serif;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    min-height: 100vh;
+h2 {
+  color: transparent;
+  font-size: 300px !important;
+  font-family: "Acme", sans-serif;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px white;
+}
+
+h3 {
+  font-size: 50px !important;
+  font-family: "Acme", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem !important;
+}
+
+h4 {
+  font-size: 30px !important;
+  font-family: "Acme", sans-serif;
+  text-transform: uppercase;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+    padding-right: 150px;
+    padding-left: 150px;
+  }
 }
