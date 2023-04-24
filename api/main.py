@@ -5,22 +5,15 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 import xgboost as xgb
-from sklearn.datasets import make_classification
-from sklearn import datasets
-
-from sklearn.model_selection import train_test_split
-
-from sklearn.preprocessing import LabelEncoder 
-
-from xgboost import XGBRegressor
-
-from sklearn.metrics import accuracy_score
 
 
 app = FastAPI()
 
 class Request(BaseModel):
     grid: int
+    constructor:int
+    race:int
+    driver:int
 
 @app.post("/predict")
 def predict(req:Request):
@@ -76,16 +69,21 @@ def predict(req:Request):
     saved_model = xgb.Booster()
     saved_model.load_model('xgb_model.model')
 
-    X_test = df.drop(["driverId", "constructorId"], axis = 1)
-    
-# On crée la ligne de test
+    mean_grid_race = df.loc[(df["driverId"] == req.driver) & (df["raceId"] == req.race), "grid"].mean()
+    # df["moy_grid_by_race"] = mean_grid_race
+
+    # Calculate moy_grid_by_constructor
+    mean_grid_constructor = df.loc[(df["driverId"] == req.driver) & (df["constructorId"] == req.constructor) , "grid"].mean()
+    # df["moy_grid_by_constructor"] = mean_grid_constructor
+    print('MEAN',mean_grid_constructor,mean_grid_race)
+    # On crée la ligne de test
     test_data = {
-        'raceId': [40],
-        'driverId': [30],
-        'constructorId': [10],
-        'grid': [6],
-        'moy_grid_by_race': [5.6],
-        'moy_grid_by_constructor': [2]
+        'raceId': [req.race],
+        'driverId': [req.driver],
+        'constructorId': [req.constructor],
+        'grid': [req.grid],
+        'moy_grid_by_race': [mean_grid_race],
+        'moy_grid_by_constructor': [mean_grid_constructor]
     }
 
     test_df = pd.DataFrame(data=test_data)
@@ -112,9 +110,10 @@ def predict(req:Request):
 
     # On utilise le modèle pour faire une prédiction
     y_pred = saved_model.predict(xgb.DMatrix(test_df))
-    # y_pred = saved_model.predict(xgb.DMatrix(X_test))
     print('get',req.grid,y_pred)
     return y_pred.tolist()
+
+
 
 # uvicorn main:app --reload --port 7999 
 # python3 -m uvicorn main:app --reload --port 7999 
