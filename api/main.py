@@ -66,16 +66,16 @@ def predict(req:Request):
     driver_id_df = driver_id_df.add_prefix('driver_')
     df = pd.concat([df, driver_id_df], axis=1)
 
+
+    # On charge le model précédement entrainer avec jupyter
     saved_model = xgb.Booster()
     saved_model.load_model('xgb_model.model')
 
     mean_grid_race = df.loc[(df["driverId"] == req.driver) & (df["raceId"] == req.race), "grid"].mean()
-    # df["moy_grid_by_race"] = mean_grid_race
-
-    # Calculate moy_grid_by_constructor
     mean_grid_constructor = df.loc[(df["driverId"] == req.driver) & (df["constructorId"] == req.constructor) , "grid"].mean()
-    # df["moy_grid_by_constructor"] = mean_grid_constructor
-    print('MEAN',mean_grid_constructor,mean_grid_race)
+
+    print('MEAN',req.race,mean_grid_constructor,mean_grid_race)
+
     # On crée la ligne de test
     test_data = {
         'raceId': [req.race],
@@ -85,7 +85,7 @@ def predict(req:Request):
         'moy_grid_by_race': [mean_grid_race],
         'moy_grid_by_constructor': [mean_grid_constructor]
     }
-
+    
     test_df = pd.DataFrame(data=test_data)
     test_df['constructorId'] = test_df['constructorId'].astype(str)
     test_df['driverId'] = test_df['driverId'].astype(str)

@@ -3,8 +3,6 @@ import requests
 from django.http import HttpResponse
 from .forms import RacingForm
 def home(request):
-   
-
     if request.method == 'POST':
         form = RacingForm(request.POST)
         if form.is_valid():

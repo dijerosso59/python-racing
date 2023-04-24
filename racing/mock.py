@@ -4,10 +4,10 @@ data_driver = [(1,"Lewis Hamilton"),
         (839,"Esteban Ocon")
         ]
 
-data_race = [(6,"Circuit de Monaco"), 
-        (15,"Marina Bay Street Circuit"), 
-        (17,"Shanghai International Circuit"),
-        (44,"Las Vegas Street Circuit")
+data_race = [(1098,"Circuit de Monaco"), 
+        (1091,"Marina Bay Street Circuit"), 
+        (1089,"Shanghai International Circuit"),
+        (1087,"Las Vegas Street Circuit")
         ]
 
 data_constructor = [(6,"Ferrari"), 
