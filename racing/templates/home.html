@@ -78,38 +78,6 @@
             <h3>Choisis ton pilote !</h3>
           </div>
           <form method="post" action="">
-            <div class="element">
-              <label for="">Nom du Pilote</label>
-              <select name="driver" id="" form="">
-                {% for element in data %}
-                <option id="{{ element.id }}">{{ element.name }}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="element">
-              <label for="">Circuit</label>
-              <select name="race" id="" form="">
-                {% for element in data %}
-                <option id="{{ element.id }}">{{ element.name }}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="element">
-              <label for="constructor">Constructeur</label>
-              <select name="" id="" form="">
-                {% for element in data %}
-                <option id="{{ element.id }}">{{ element.name }}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="element">
-              <label for="">Position de départ</label>
-              <select name="grid" id="" form="">
-                {% for element in data %}
-                <option id="{{ element.id }}">{{ element.name }}</option>
-                {% endfor %}
-              </select>
-            </div>
             {{ form.as_p }}
             <div class="text-center">
               <button class="btn" type="submit">Envoyer</button>
