@@ -18,6 +18,15 @@ Lancement du serveur avec FastApi :
 cd api && uvicorn main:app --reload --port 7999 
 ```
 
+# Requirements
+fastapi
+pydantic
+xgboost
+numpy
+pandas
+sklearn
+django
+
 # Screenshots
 
 ![Screenshot](static/img/vue1.png)

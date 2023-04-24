@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import xgboost as xgb
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
@@ -85,7 +84,7 @@ def predict(req:Request):
         'moy_grid_by_race': [mean_grid_race],
         'moy_grid_by_constructor': [mean_grid_constructor]
     }
-    
+
     test_df = pd.DataFrame(data=test_data)
     test_df['constructorId'] = test_df['constructorId'].astype(str)
     test_df['driverId'] = test_df['driverId'].astype(str)
