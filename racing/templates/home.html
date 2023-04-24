@@ -16,7 +16,11 @@
       <div class="background">
         <div class="container m-auto relative py">
           <div>
-            <h1>Bienvenue sur Diroshow Racing !</h1>
+            <h1>
+              {% if prediction %} Ton pilote arrivera
+              <span id="position">{{prediction}}e</span>
+              {% else %} Bienvenue sur Diroshow Racing ! {% endif %}
+            </h1>
           </div>
           <div class="flex">
             <div class="map">
@@ -26,7 +30,7 @@
               />
             </div>
             <div class="description">
-              <p class="racer">Circuit PYTHON</p>
+              <p class="racer">Circuit ECV PYTHON</p>
               <ul class="grid">
                 <li>
                   <p>Date</p>
@@ -108,12 +112,9 @@
             </div>
             {{ form.as_p }}
             <div class="text-center">
-              {% if prediction %}
-              <h4 class="result">Ton pilote arrivera <span id="position">{{prediction}}e</span></h4>
-              {% endif %}
               <button class="btn" type="submit">Envoyer</button>
             </div>
-            {% csrf_token %} 
+            {% csrf_token %}
           </form>
         </div>
         <div class="w-50 h-full">
