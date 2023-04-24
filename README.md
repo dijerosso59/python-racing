@@ -34,7 +34,7 @@ https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020
 
 La partie front-end est réalisé avec le framework Django. Voici l'architecture du projet avec les explications :
 
-* api : l'ensemble des fichiers pour l'api
-* jupyter : dossier du notebook
+* api : l'ensemble des fichiers pour l'api, le modele est généré avec l'api. Le fichier main.py dans ce dossier permet de déployer une API REST en utilisant FastAPI pour prédire le résultat d'une course de Formule 1 en fonction de la position de départ, de la moyenne de la position de départ du pilote pour la même course, de la moyenne de la position de départ du constructeur pour la même course et des identifiants du pilote et du constructeur. Le modèle utilisé est un XGBoost entraîné sur un jeu de données de résultats de courses de Formule 1.
+* jupyter : dossier du notebook qui permet de faire des tests sur les données et de voir les résultats de l'IA.
 * racing: dossier principal de l'application avec tous les paramètres. La vue principal se trouve dans le dossier template : home.html
 * static: l'ensemble des assets du projet comme les images ou les fichier css
