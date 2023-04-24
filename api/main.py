@@ -114,7 +114,7 @@ def predict(req:Request):
     y_pred = saved_model.predict(xgb.DMatrix(test_df))
     # y_pred = saved_model.predict(xgb.DMatrix(X_test))
     print('get',req.grid,y_pred)
-    return req.grid
+    return y_pred.tolist()
 
 # uvicorn main:app --reload --port 7999 
 # python3 -m uvicorn main:app --reload --port 7999 
