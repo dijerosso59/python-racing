@@ -1,14 +1,9 @@
-data = [{
-    "id": 1,
-    "name": "Diroshow"
-}, {
-    "id": 2,
-    "name": "Thirion"
-}, {
-    "id": 3,
-    "name": "Lgc"
-}, {
-    "id": 4,
-    "name": "John Wick"
-}
+data = [(1,"Diroshow"), ( 2,  "Thirion"
+), (
+     3,
+     "Lgc"
+), (
+     4,
+     "John Wick"
+)
 ]
