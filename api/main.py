@@ -73,8 +73,6 @@ def predict(req:Request):
     mean_grid_race = df.loc[(df["driverId"] == req.driver) & (df["raceId"] == req.race), "grid"].mean()
     mean_grid_constructor = df.loc[(df["driverId"] == req.driver) & (df["constructorId"] == req.constructor) , "grid"].mean()
 
-    print('MEAN',req.race,mean_grid_constructor,mean_grid_race)
-
     # On crée la ligne de test
     test_data = {
         'raceId': [req.race],
@@ -109,7 +107,6 @@ def predict(req:Request):
 
     # On utilise le modèle pour faire une prédiction
     y_pred = saved_model.predict(xgb.DMatrix(test_df))
-    print('get',req.grid,y_pred)
     return y_pred.tolist()
 
 
