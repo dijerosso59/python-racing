@@ -76,7 +76,7 @@
           <form method="post" action="">
             <div class="element">
               <label for="">Nom du Pilote</label>
-              <select name="" id="" form="">
+              <select name="driver" id="" form="">
                 {% for element in data %}
                 <option id="{{ element.id }}">{{ element.name }}</option>
                 {% endfor %}
@@ -84,14 +84,14 @@
             </div>
             <div class="element">
               <label for="">Circuit</label>
-              <select name="" id="" form="">
+              <select name="race" id="" form="">
                 {% for element in data %}
                 <option id="{{ element.id }}">{{ element.name }}</option>
                 {% endfor %}
               </select>
             </div>
             <div class="element">
-              <label for="">Constructeur</label>
+              <label for="constructor">Constructeur</label>
               <select name="" id="" form="">
                 {% for element in data %}
                 <option id="{{ element.id }}">{{ element.name }}</option>
@@ -100,16 +100,20 @@
             </div>
             <div class="element">
               <label for="">Position de départ</label>
-              <select name="" id="" form="">
+              <select name="grid" id="" form="">
                 {% for element in data %}
                 <option id="{{ element.id }}">{{ element.name }}</option>
                 {% endfor %}
               </select>
             </div>
+            {{ form.as_p }}
             <div class="text-center">
-              <h4 class="result">Ton pilote arrivera <span id="position">3e</span></h4>
+              {% if prediction %}
+              <h4 class="result">Ton pilote arrivera <span id="position">{{prediction}}e</span></h4>
+              {% endif %}
               <button class="btn" type="submit">Envoyer</button>
             </div>
+            {% csrf_token %} 
           </form>
         </div>
         <div class="w-50 h-full">

@@ -12,6 +12,12 @@ Lancement du serveur avec Django :
 python manage.py runserver
 ```
 
+Lancement du serveur avec FastApi :
+
+```bash
+cd api && uvicorn main:app --reload --port 7999 
+```
+
 # Screenshots
 
 ![Screenshot](static/img/vue1.png)
